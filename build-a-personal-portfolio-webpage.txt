@@ -1,0 +1,267 @@
+** start of undefined **
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Arceus's Portfolio</title>
+    <meta name="description" content="Take a look at some of my work!" />
+    <link rel="stylesheet" href="styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/d8d89bda4c.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <nav id="navbar">
+      <ul class="nav-list">
+        <li><a href="#welcome-section">About Me</a></li>
+        <li><a href="#projects">Work</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <section id="welcome-section">
+      <h1>Hey, Welcome to my page!</h1>
+      <p>I'm Arceus, an aspiring programmer!</p>
+    </section>
+    <section id="projects">
+      <h2>Check out some of my HTML/CSS projects!</h2>
+      <div class="projects-div">
+        <a class="project-tile" href="https://github.com/ArceusLegend/RWD---Survey-Form" target="_blank">>Survey Form<</a>
+        <a class="project-tile" href="https://github.com/ArceusLegend/RWD---Tribute-Page" target="_blank">>Tribute Page<</a>
+        <a class="project-tile" href="https://github.com/ArceusLegend/RWD---Technical-Documentation" target="_blank">>Technical Documentation for C<</a>
+      </div>
+      <p>I have also dabbled in C, check my projects out <a id="profile-link" target="_blank" href="https://github.com/ArceusLegend">here!</a></p>
+    </section>
+    <section id="contact">
+      <p>I'm open to work and learn!</p>
+      <ul>
+        <li><a id="profile-link" target="_blank" href="https://github.com/ArceusLegend">Github</a></li>
+        <li><a id="twtr-link" target="_blank" href="https://twitter.com/ArceusLegend50">Twitter</a></li>
+        <li><a id="email-link" target="_blank" href="mailto:markoskap13@gmail.com">Email me!</a></li>
+      </ul>
+    </section>
+  </body>
+</html>
+
+** end of undefined **
+
+** start of undefined **
+
+/* colors */
+:root{
+  --white: #f0f0f0;
+  --green: #90aa90;
+  --blue: #454580;
+  --red: #be3144;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+*, ::before, ::after {
+  box-sizing: inherit;
+}
+
+html{
+  box-sizing: border-box;
+    /* Set font size for easy rem calculations
+     * default document font size = 16px, 1rem = 16px, 100% = 16px
+     * (100% / 16px) * 10 = 62.5%, 1rem = 10px, 62.5% = 10px */
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+/*max-width = screen size divided by browser base font size*/
+
+/* 1200px / 16px = 75em */
+@media(max-width: 75em){
+  html{
+    font-size: 60%;
+  }
+}
+
+/* 980px / 16px = 61.25em*/
+@media(max-width: 61.25em){
+  html{
+    font-size: 55%;
+  }
+}
+
+/* 460px / 16px = 28.75em */
+@media(max-width: 28.75em){
+  html{
+    font-size: 50%
+  }
+}
+
+/*base styles*/
+
+body {
+  font-family: sans-serif;
+  font-size: 1.8rem; /* 18px */
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--white);
+}
+
+h1,
+h2{
+  font-weight: 700;
+  text-align: center;
+}
+
+h1{
+  font-size: 6rem;
+}
+
+h2{
+  font-size: 3rem;
+}
+
+ul{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+  color: var(--white);
+}
+
+/*nav styles*/
+
+#navbar {
+  display: flex;
+  justify-content: flex-end;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--blue);
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.4);
+  z-index: 10;
+}
+
+.nav-list {
+  display: flex;
+  margin-right: 3rem;
+}
+
+@media (max-width: 28.75em) {
+  #navbar {
+    justify-content: center;
+  }
+
+  .nav-list {
+    margin: 0 1rem;
+  }     
+}
+
+.nav-list a {
+  display: block;
+  font-size: 2.2rem;
+  padding: 2rem;
+}
+
+.nav-list a:hover {
+  background: var(--green);
+}
+
+/*welcome section*/
+
+#welcome-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: #000;
+  background-image: linear-gradient(200deg, #3a3d40 0%, var(--green) 50%, #3a3d40 100%);
+}
+
+#welcome-section > p {
+  font-size: 2.6rem;
+  font-weight: 200;
+  font-style: italic;
+  color: var(--blue);
+  padding-top: 30px;
+}
+
+/* projects section */
+
+#projects {
+  text-align: center;
+  padding: 10rem 2rem;
+  background: var(--red);
+}
+
+#projects > h2 {
+  max-width: 640px;
+  margin: 0 auto 6rem auto;
+  border-bottom: 0.2rem solid var(--white);
+}
+
+@media(max-width: 28.75em) {
+  #projects > h2{
+    font-size: 3rem;
+  }
+}
+
+.projects-div{
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.projects-div > a{
+  margin: 0.7rem auto;
+  font-size: 2.3rem;
+}
+
+.projects-div > a:hover{
+  background: var(--blue);
+}
+
+#projects > p{
+  padding-top: 7rem;
+  font-size: 3rem;
+}
+
+#projects > p > a:hover{
+  background: var(--blue);
+}
+
+#contact{
+  background: var(--blue);
+  border-top: 2px solid black;
+}
+
+#contact > p{
+  font-size: 4rem;
+  text-align: center;
+  font-style: italic;
+}
+
+#contact > ul {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 980px;
+  margin: 4rem;
+  flex-wrap: wrap;
+}
+
+#contact > ul > li{
+  font-size: 2.4rem;
+  text-shadow: 2px 2px 1px #1f1f1f;
+  transition: transform 0.3s ease-out;
+  margin: auto 2rem;
+}
+
+#contact > ul > li:hover{
+  transform: translateY(8px);
+}
+
+** end of undefined **
+
